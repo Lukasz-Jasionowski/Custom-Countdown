@@ -103,8 +103,27 @@ button:hover {
     filter: brightness(120%)
 }
 
+/* Countdown */
+ul {
+    margin-left: -45px;
+}
+
+li {
+    display: inline-block;
+    font-size: 30px;
+    list-style-type: none;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+li span {
+    display: block;
+    font-size: 80px;
+    text-align: center;
+}
+
 /* Media Query */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1500px) {
     .video-background {
         height: 100vh;
         width: 100vw;
@@ -128,6 +147,11 @@ button:hover {
         top: unset;
     }
 
+    .countdown {
+        position: relative;
+        top: 10px;
+    }
+
     .form {
         width: unset;
     }
@@ -140,4 +164,11 @@ button:hover {
         font-size: 20px;
     }
 
+    li {
+        font-size: 15px;
+    }
+
+    li span {
+        font-size: 40px;
+    }
 }
