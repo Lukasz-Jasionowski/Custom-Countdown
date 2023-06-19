@@ -43,8 +43,21 @@ function updateCountdown(e) {
     e.preventDefault();
     countdownTitle = e.srcElement[0].value;
     countdownDate = e.srcElement[1].value;
-    countdownValue = new Date(countdownDate).getTime();
-    updateDOM();
+    if (countdownDate === '') {
+        alert('Please select a date for the countdown!')
+    } else {
+        countdownValue = new Date(countdownDate).getTime();
+        updateDOM();
+    }
+}
+
+function reset() {
+    countdownEl.hidden = true;
+    inputContainer.hidden = false;
+    clearInterval(countdownActive);
+    countdownElTitle = '';
+    countdownDate = '';
 }
 
 countdownForm.addEventListener('submit', updateCountdown);
+countdownBtn.addEventListener('click', reset);
